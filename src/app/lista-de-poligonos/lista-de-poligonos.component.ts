@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Poligono } from '../poligono';
+import { PoligonoService } from '../poligono.service';
+
 @Component({
   selector: 'app-lista-de-poligonos',
   templateUrl: './lista-de-poligonos.component.html',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaDePoligonosComponent implements OnInit {
 
-  constructor() { }
+  poligonos: Poligono[] = [];
+  selectedPoligono?: Poligono;
+
+  constructor(private poligonoService: PoligonoService) { }
 
   ngOnInit(): void {
+    this.getPoligonos();
+  }
+
+  getPoligonos(): void{
+    this.poligonoService.getPoligonos().subscribe(poligonos => this.poligonos = poligonos)
+  }
+
+  onSelect(poligono: Poligono): void {
+    this.selectedPoligono = poligono;
   }
 
 }

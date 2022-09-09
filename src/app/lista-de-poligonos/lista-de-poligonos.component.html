@@ -1,1 +1,13 @@
-<p>lista-de-poligonos works!</p>
+<ul class="poligonos">
+    <li *ngFor="let poligono of poligonos">
+        
+
+      <button [class.selected]="poligono === selectedPoligono" type="button" (click)="onSelect(poligono)">
+        <span class="id">{{"  "+poligono.id}}</span> 
+        <span class="lados">{{"  "+poligono.lados}}</span>
+        <span class="tamanho">{{"  "+poligono.tamanho}}</span>
+        <span class="dataCriacao">{{"  "+poligono.dataCriacao}}</span>
+        <span class="ultimaModificacao">{{"  "+poligono.ultimaModificacao}}</span>
+    </button>
+    </li>
+  </ul>
