@@ -7,18 +7,22 @@ import { ListaDePoligonosComponent } from './lista-de-poligonos/lista-de-poligon
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormularioPoligonoComponent } from './formulario-poligono/formulario-poligono.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaDePoligonosComponent
+    ListaDePoligonosComponent,
+    FormularioPoligonoComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
