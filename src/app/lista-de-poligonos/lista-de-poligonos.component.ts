@@ -36,7 +36,10 @@ export class ListaDePoligonosComponent implements OnInit {
   }
 
   apagar(poligono: Poligono) : void{
-
+    if(confirm('Deseja apagar permanentemente o poligono de Id = '+poligono.id+'?')){
+      this.poligonos = this.poligonos.filter(h => h != poligono);
+      this.poligonoService.deletarPoligono(poligono.id).subscribe();
+    }
   }
 
 }

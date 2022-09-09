@@ -14,7 +14,7 @@ import { Poligono } from './poligono';
 })
 export class PoligonoService {
 
-  private urlGetPoligonos = 'http://localhost:8080/api/poligonos/CRUD';  // URL to web api
+  private url = 'http://localhost:8080/api/poligonos/CRUD/';  // URL to web api
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class PoligonoService {
 
   //HTTP getPoligonos
   getPoligonos() : Observable<Poligono[]>{
-    return this.http.get<Poligono[]>(this.urlGetPoligonos)
+    return this.http.get<Poligono[]>(this.url)
       .pipe(
         tap(_ => catchError(this.handleError<Poligono[]>('getPoligonos', []))
       ));
@@ -36,8 +36,11 @@ export class PoligonoService {
   }
 
   //HTTP delete
-  deletarPoligono(idPoligono:number){
-
+  deletarPoligono(idPoligono:number): Observable<Poligono> {
+    const url = `${this.url}apagar/${idPoligono}`;
+  
+    return this.http.delete<Poligono>(url, this.httpOptions).pipe(
+      tap(_ => catchError(this.handleError<Poligono>('deleteHero'))));
   }
 
   //HTTP put
