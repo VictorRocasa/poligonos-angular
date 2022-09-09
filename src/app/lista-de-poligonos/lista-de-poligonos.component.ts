@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Poligono } from '../poligono';
 import { PoligonoService } from '../poligono.service';
 
+import {Router} from '@angular/router'; 
+
 @Component({
   selector: 'app-lista-de-poligonos',
   templateUrl: './lista-de-poligonos.component.html',
@@ -13,7 +15,7 @@ export class ListaDePoligonosComponent implements OnInit {
   poligonos: Poligono[] = [];
   selectedPoligono?: Poligono;
 
-  constructor(private poligonoService: PoligonoService) { }
+  constructor(private poligonoService: PoligonoService, private router:Router) { }
 
   ngOnInit(): void {
     this.getPoligonos();
@@ -28,11 +30,15 @@ export class ListaDePoligonosComponent implements OnInit {
   }
 
   add() : void{
-    
+    this.router.navigate(['/formulario-poligonos'])
   }
 
   editar() : void{
-
+    if(this.selectedPoligono === undefined)
+        alert('Selecione algum poligono para editar!');
+    else{
+      this.router.navigate(['/formulario-poligonos'], {state: {}});
+    }
   }
 
   apagar(poligono: Poligono) : void{
