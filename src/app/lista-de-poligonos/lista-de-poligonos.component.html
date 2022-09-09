@@ -1,16 +1,22 @@
-<table>
-  <tr>
-    <td>Id</td>
-    <td>nº Lados</td>
-    <td>Tamanho</td>
-    <td>Criado em</td>
-    <td>Modificado em</td>
-  </tr>
-  <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">
-    <td>{{ poligono.id }}</td>
-    <td>{{ poligono.lados }}</td>
-    <td>{{ poligono.tamanho }}</td>
-    <td>{{ poligono.dataCriacao }}</td>
-    <td>{{ poligono.ultimaModificacao }}</td>
-  </tr>
-</table>
+<div>
+  <button type = "button" (click)="add();">Adicionar Poligono</button>
+  <button type = "button" (click)="editar();">Editar Poligono</button>
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>nº Lados</td>
+      <td>Tamanho</td>
+      <td>Criado em</td>
+      <td>Modificado em</td>
+      <td>Excluir</td>
+    </tr>
+    <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">
+      <td>{{ poligono.id }}</td>
+      <td>{{ poligono.lados }}</td>
+      <td>{{ poligono.tamanho }}</td>
+      <td>{{ poligono.dataCriacao }}</td>
+      <td>{{ poligono.ultimaModificacao }}</td>
+      <td class = "excluir" (click)="apagar(poligono);">X</td>
+    </tr>
+  </table>
+</div>

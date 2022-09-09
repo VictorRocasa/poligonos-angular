@@ -27,4 +27,16 @@ export class ListaDePoligonosComponent implements OnInit {
     this.selectedPoligono = poligono;
   }
 
+  add() : void{
+    
+  }
+
+  editar() : void{
+
+  }
+
+  apagar(poligono: Poligono) : void{
+
+  }
+
 }

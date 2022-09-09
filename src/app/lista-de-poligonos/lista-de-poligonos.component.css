@@ -15,5 +15,8 @@ table, th, td {
 
 .item.ativo{
   background-color: #8eacc9;
-  cursor: default;
+}
+
+.excluir:hover{
+  background-color: #de6c6c;
 }
