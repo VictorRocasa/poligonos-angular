@@ -1,13 +1,16 @@
-<ul class="poligonos">
-    <li *ngFor="let poligono of poligonos">
-        
-
-      <button [class.selected]="poligono === selectedPoligono" type="button" (click)="onSelect(poligono)">
-        <span class="id">{{"  "+poligono.id}}</span> 
-        <span class="lados">{{"  "+poligono.lados}}</span>
-        <span class="tamanho">{{"  "+poligono.tamanho}}</span>
-        <span class="dataCriacao">{{"  "+poligono.dataCriacao}}</span>
-        <span class="ultimaModificacao">{{"  "+poligono.ultimaModificacao}}</span>
-    </button>
-    </li>
-  </ul>
+<table>
+  <tr>
+    <td>Id</td>
+    <td>nº Lados</td>
+    <td>Tamanho</td>
+    <td>Criado em</td>
+    <td>Modificado em</td>
+  </tr>
+  <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">
+    <td>{{ poligono.id }}</td>
+    <td>{{ poligono.lados }}</td>
+    <td>{{ poligono.tamanho }}</td>
+    <td>{{ poligono.dataCriacao }}</td>
+    <td>{{ poligono.ultimaModificacao }}</td>
+  </tr>
+</table>
