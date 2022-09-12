@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Poligono } from './poligono';
+import { ContadorPoligono } from './contadorPoligono';
 
 
 
@@ -48,8 +49,10 @@ export class PoligonoService {
   }
 
   //HTTP getEstoque
-  getPoligonosIguais(){
-
+  listarEstoque() : Observable<ContadorPoligono[]>{
+    return this.http.get<ContadorPoligono[]>(this.url+'agrupamento')
+      .pipe(catchError(this.handleError<ContadorPoligono[]>('getPoligonos', [])
+      ));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

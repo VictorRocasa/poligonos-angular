@@ -4,12 +4,14 @@ import { ListaDePoligonosComponent } from './lista-de-poligonos/lista-de-poligon
 import { FormularioPoligonoComponent } from './formulario-poligono/formulario-poligono.component';
 import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.component';
 import { FormasComponent } from './formas/formas.component';
+import { EstoqueComponent } from './estoque/estoque.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/poligonos', pathMatch: 'full' },
   { path: 'poligonos', component: ListaDePoligonosComponent },
-  { path: 'novo', component: FormularioPoligonoComponent },
-  { path: 'editar', component: EditarPoligonoComponent },
+  { path: 'poligonos/novo', component: FormularioPoligonoComponent },
+  { path: 'poligonos/editar', component: EditarPoligonoComponent },
+  { path: 'poligonos/estoque', component: EstoqueComponent },
   { path: 'formas', component: FormasComponent },
 ];
 

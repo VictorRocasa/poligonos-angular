@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
 import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.component';
 import { FormasComponent } from './formas/formas.component';
+import { EstoqueComponent } from './estoque/estoque.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormasComponent } from './formas/formas.component';
     FormularioPoligonoComponent,
     BotaoVoltarComponent,
     EditarPoligonoComponent,
-    FormasComponent
+    FormasComponent,
+    EstoqueComponent
   ],
   imports: [
     HttpClientModule,

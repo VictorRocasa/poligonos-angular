@@ -1,15 +1,15 @@
 <div>
   <h2>Lista de Polígonos</h2>
-  <button type = "button" (click)="add();">Adicionar Poligono</button>
+  <button type = "button" routerLink="/poligonos/novo">Adicionar Poligono</button>
   <button type = "button" (click)="editar();">Editar Poligono</button>
-  <button type = "button" (click)="listarEstoque();">Listar Estoque</button>
+  <button type = "button" routerLink="/poligonos/estoque">Listar Estoque</button>
   <table>
     <tr>
       <td>Id</td>
       <td>nº Lados</td>
       <td>Tamanho</td>
       <td class = "data">Criado em</td>
-      <td>Modificado em</td>
+      <td class = "data">Modificado em</td>
       <td>Excluir</td>
     </tr>
     <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">

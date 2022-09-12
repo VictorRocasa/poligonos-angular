@@ -1,0 +1,16 @@
+<div>
+    <h2>Estoque de Polígonos</h2>
+    <app-botao-voltar></app-botao-voltar>
+    <table>
+      <tr>
+        <td>nº Lados</td>
+        <td>Tamanho</td>
+        <td>Em estoque</td>
+      </tr>
+      <tr class = "item" *ngFor="let poligono of poligonos">
+        <td>{{ poligono.lados }}</td>
+        <td>{{ poligono.tamanho }}</td>
+        <td>{{ poligono.ocorrencias }}</td>
+      </tr>
+    </table>
+  </div>

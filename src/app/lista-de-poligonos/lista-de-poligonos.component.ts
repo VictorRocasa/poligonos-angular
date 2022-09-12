@@ -29,14 +29,14 @@ export class ListaDePoligonosComponent implements OnInit {
   }
 
   add() : void{
-    this.router.navigate(['/novo']);
+    this.router.navigate(['poligonos/novo']);
   }
 
   editar() : void{
     if(this.selectedPoligono === undefined)
         alert('Selecione algum poligono para editar!');
     else{
-      this.router.navigate(['/editar'], { queryParams: { 
+      this.router.navigate(['poligonos/editar'], { queryParams: { 
           id: this.selectedPoligono.id,
           lados: this.selectedPoligono.lados,
           tamanho: +this.selectedPoligono.tamanho,
