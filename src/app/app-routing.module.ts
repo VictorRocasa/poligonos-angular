@@ -6,7 +6,7 @@ import { FormularioPoligonoComponent } from './formulario-poligono/formulario-po
 const routes: Routes = [
   { path: '', redirectTo: '/poligonos', pathMatch: 'full' },
   { path: 'poligonos', component: ListaDePoligonosComponent },
-  { path: 'novo-poligono', component: FormularioPoligonoComponent }
+  { path: 'novo-poligono', component: FormularioPoligonoComponent },
 ];
 
 @NgModule({

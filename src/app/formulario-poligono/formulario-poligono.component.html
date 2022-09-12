@@ -1,7 +1,7 @@
 <div>
     <div>
-          <label for="qtd-lados">Quantidade de lados:</label>
-          <select id="qtd-lados" #lados name="qtd-lados">
+          <label for="qtdLados">Quantidade de lados:</label>
+          <select id="qtdLados" #lados name="qtdLados">
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -13,6 +13,6 @@
         <label for="tamanho">Tamanho:</label>
         <input type="text" id="tamanho" #tamanho />
     </div>
-    <button type="button" (click)="add(lados.value, tamanho.value);">Salvar</button>
+    <button type="button" (click)=" add(lados.value, tamanho.value); tamanho.value = limpa(tamanho.value)">Salvar</button>
     <app-botao-voltar></app-botao-voltar>
 </div>

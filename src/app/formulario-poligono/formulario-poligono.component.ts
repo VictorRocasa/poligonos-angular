@@ -12,27 +12,41 @@ import {Router} from '@angular/router';
 })
 export class FormularioPoligonoComponent implements OnInit {
 
+  sucesso:boolean = false;
+
   constructor(private poligonoService: PoligonoService, private router: Router) { }
 
   ngOnInit(): void {
     
   }
 
-  add(l: string, t: string) : void{
-    const regex = new RegExp('^[0-9]+[\\.|\\,[0-9]*]{0,1}$');
+  add(l: string, t: string){
+    t = t.replace(',','.');
+    alert(t);
+    const regex = new RegExp('^[0-9]+(\.[0-9]+)?$');
     let teste = t.match(regex);
     if(teste === null){
-      alert("Erro! Tamanho precisa ser um numero real maior que 0");
+      alert("Erro! Tamanho precisa ser um número real!");
       return;
     }
       let tamanho = Number(t);
       if(tamanho === 0){
-        alert("Erro! Tamanho precisa ser um numero real maior que 0");
+        alert("Erro! Tamanho precisa maior que 0!");
         return;
       }
       let lados = Number(l);
+      alert(tamanho);
       this.poligonoService.adicionarPoligono({lados,tamanho} as Poligono).subscribe();
       alert('Poligono adicionado com sucesso!');
+      this.sucesso = true;
+  }
+
+  limpa(valor: string): string{
+    if(this.sucesso){
+      this.sucesso = false;
+      return '';
+    }
+    return valor;
   }
 
 }
