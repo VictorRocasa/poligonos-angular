@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cadastro de poligonos';
+
+  poligonos(){
+
+  }
+
+  formas(){
+    
+  }
 }

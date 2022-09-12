@@ -7,8 +7,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-lista-de-poligonos',
-  templateUrl: './lista-de-poligonos.component.html',
-  styleUrls: ['./lista-de-poligonos.component.css']
+  templateUrl: './lista-de-poligonos.component.html',styleUrls: ['./lista-de-poligonos.component.css']
 })
 export class ListaDePoligonosComponent implements OnInit {
 
@@ -52,6 +51,10 @@ export class ListaDePoligonosComponent implements OnInit {
       this.poligonos = this.poligonos.filter(h => h != poligono);
       this.poligonoService.deletarPoligono(poligono.id).subscribe();
     }
+  }
+  
+listarEstoque() {
+  
   }
 
 }

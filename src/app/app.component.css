@@ -2,36 +2,62 @@
 h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
+    font-size: 280%;
   }
-  h2, h3 {
+
+h2 {
+    font-size: 240%;
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: medium;
+  }
+  
+  h3 {
     color: #444;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
   }
+
   body {
     margin: 2em;
   }
+
   body, input[type="text"], button {
     color: #333;
     font-family: Cambria, Georgia, serif;
   }
+
   button {
     background-color: #eee;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin-right: -1rem;
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
+  }
+
+  .nav-botao{
+    background-color: rgb(96, 133, 132);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.7rem;
     padding: 1rem;
     margin-right: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+    margin-top: -0.5rem;
   }
+
   button:hover {
     background-color: black;
     color: white;
   }
+
   button:disabled {
     background-color: #eee;
     color: #aaa;
