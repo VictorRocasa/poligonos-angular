@@ -31,8 +31,8 @@ export class PoligonoService {
   }
 
   //HTTP post
-  adicionarPoligono(poligono: Poligono){
-
+  adicionarPoligono(lados: number, tamanho: number): void{
+    this.http.post<Poligono>(this.url, {lados, tamanho}, this.httpOptions);
   }
 
   //HTTP delete

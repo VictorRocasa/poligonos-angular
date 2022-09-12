@@ -12,12 +12,26 @@ import {Router} from '@angular/router';
 })
 export class FormularioPoligonoComponent implements OnInit {
 
-  poligono?: Poligono;
-
   constructor(private poligonoService: PoligonoService, private router: Router) { }
 
   ngOnInit(): void {
     
+  }
+
+  add(lados: string, tamanho: string) : void{
+    const regex = new RegExp('^[0-9]+[\\.|\\,[0-9]*]{0,1}$');
+    let teste = tamanho.match(regex);
+    if(teste === null){
+      alert("Erro! Tamanho precisa ser um numero real maior que 0");
+      return;
+    }
+      let t = Number(tamanho);
+      if(t === 0){
+        alert("Erro! Tamanho precisa ser um numero real maior que 0");
+        return;
+      }
+      let l = Number(lados);
+      this.poligonoService.adicionarPoligono(l, t);
   }
 
 }

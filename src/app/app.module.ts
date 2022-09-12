@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { FormularioPoligonoComponent } from './formulario-poligono/formulario-poligono.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
 
 
 
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     ListaDePoligonosComponent,
-    FormularioPoligonoComponent
+    FormularioPoligonoComponent,
+    BotaoVoltarComponent
   ],
   imports: [
     HttpClientModule,

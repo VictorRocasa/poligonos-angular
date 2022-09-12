@@ -30,7 +30,7 @@ export class ListaDePoligonosComponent implements OnInit {
   }
 
   add() : void{
-    this.router.navigate(['/formulario-poligonos'])
+    this.router.navigate(['/novo-poligono'])
   }
 
   editar() : void{
