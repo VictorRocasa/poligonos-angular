@@ -11,6 +11,7 @@ import { FormularioPoligonoComponent } from './formulario-poligono/formulario-po
 import { AppRoutingModule } from './app-routing.module';
 import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
 import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.component';
+import { FormasComponent } from './formas/formas.component';
 
 
 
@@ -20,7 +21,8 @@ import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.compo
     ListaDePoligonosComponent,
     FormularioPoligonoComponent,
     BotaoVoltarComponent,
-    EditarPoligonoComponent
+    EditarPoligonoComponent,
+    FormasComponent
   ],
   imports: [
     HttpClientModule,
