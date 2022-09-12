@@ -18,20 +18,21 @@ export class FormularioPoligonoComponent implements OnInit {
     
   }
 
-  add(lados: string, tamanho: string) : void{
+  add(l: string, t: string) : void{
     const regex = new RegExp('^[0-9]+[\\.|\\,[0-9]*]{0,1}$');
-    let teste = tamanho.match(regex);
+    let teste = t.match(regex);
     if(teste === null){
       alert("Erro! Tamanho precisa ser um numero real maior que 0");
       return;
     }
-      let t = Number(tamanho);
-      if(t === 0){
+      let tamanho = Number(t);
+      if(tamanho === 0){
         alert("Erro! Tamanho precisa ser um numero real maior que 0");
         return;
       }
-      let l = Number(lados);
-      this.poligonoService.adicionarPoligono(l, t);
+      let lados = Number(l);
+      this.poligonoService.adicionarPoligono({lados,tamanho} as Poligono).subscribe();
+      alert('Poligono adicionado com sucesso!');
   }
 
 }

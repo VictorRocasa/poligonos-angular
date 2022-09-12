@@ -31,8 +31,8 @@ export class PoligonoService {
   }
 
   //HTTP post
-  adicionarPoligono(lados: number, tamanho: number): void{
-    this.http.post<Poligono>(this.url, {lados, tamanho}, this.httpOptions);
+  adicionarPoligono(poligono:Poligono): Observable<Poligono> {
+    return this.http.post<Poligono>(this.url, poligono, this.httpOptions).pipe(tap((newPoligono: Poligono) => catchError(this.handleError<Poligono>('addPoligono'))));
   }
 
   //HTTP delete
