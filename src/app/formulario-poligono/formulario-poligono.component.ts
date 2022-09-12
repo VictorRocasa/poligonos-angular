@@ -22,7 +22,6 @@ export class FormularioPoligonoComponent implements OnInit {
 
   add(l: string, t: string){
     t = t.replace(',','.');
-    alert(t);
     const regex = new RegExp('^[0-9]+(\.[0-9]+)?$');
     let teste = t.match(regex);
     if(teste === null){
@@ -35,7 +34,6 @@ export class FormularioPoligonoComponent implements OnInit {
         return;
       }
       let lados = Number(l);
-      alert(tamanho);
       this.poligonoService.adicionarPoligono({lados,tamanho} as Poligono).subscribe();
       alert('Poligono adicionado com sucesso!');
       this.sucesso = true;

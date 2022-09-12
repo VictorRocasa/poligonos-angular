@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormularioPoligonoComponent } from './formulario-poligono/formulario-poligono.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
+import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.component';
 
 
 
@@ -18,7 +19,8 @@ import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
     AppComponent,
     ListaDePoligonosComponent,
     FormularioPoligonoComponent,
-    BotaoVoltarComponent
+    BotaoVoltarComponent,
+    EditarPoligonoComponent
   ],
   imports: [
     HttpClientModule,

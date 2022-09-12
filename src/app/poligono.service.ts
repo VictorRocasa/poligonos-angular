@@ -32,20 +32,19 @@ export class PoligonoService {
 
   //HTTP post
   adicionarPoligono(poligono:Poligono): Observable<Poligono> {
-    return this.http.post<Poligono>(this.url, poligono, this.httpOptions).pipe(tap((newPoligono: Poligono) => catchError(this.handleError<Poligono>('addPoligono'))));
+    return this.http.post<Poligono>(this.url, poligono, this.httpOptions).pipe(catchError(this.handleError<Poligono>('addPoligono')));
   }
 
   //HTTP delete
   deletarPoligono(idPoligono:number): Observable<Poligono> {
     const url = `${this.url}apagar/${idPoligono}`;
   
-    return this.http.delete<Poligono>(url, this.httpOptions).pipe(
-      tap(_ => catchError(this.handleError<Poligono>('deleteHero'))));
+    return this.http.delete<Poligono>(url, this.httpOptions).pipe(catchError(this.handleError<Poligono>('deletePoligono')));
   }
 
   //HTTP put
-  atualizarPoligono(){
-
+  atualizarPoligono(poligono: Poligono): Observable<any> {
+    return this.http.put(this.url+'/editar/'+poligono.id, poligono, this.httpOptions).pipe(catchError(this.handleError<any>('updatePoligono')));
   }
 
   //HTTP getEstoque
