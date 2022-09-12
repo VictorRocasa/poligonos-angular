@@ -26,8 +26,7 @@ export class PoligonoService {
   //HTTP getPoligonos
   getPoligonos() : Observable<Poligono[]>{
     return this.http.get<Poligono[]>(this.url)
-      .pipe(
-        tap(_ => catchError(this.handleError<Poligono[]>('getPoligonos', []))
+      .pipe(catchError(this.handleError<Poligono[]>('getPoligonos', [])
       ));
   }
 

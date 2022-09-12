@@ -28,10 +28,6 @@ export class ListaDePoligonosComponent implements OnInit {
     this.selectedPoligono = poligono;
   }
 
-  add() : void{
-    this.router.navigate(['poligonos/novo']);
-  }
-
   editar() : void{
     if(this.selectedPoligono === undefined)
         alert('Selecione algum poligono para editar!');
@@ -51,10 +47,6 @@ export class ListaDePoligonosComponent implements OnInit {
       this.poligonos = this.poligonos.filter(h => h != poligono);
       this.poligonoService.deletarPoligono(poligono.id).subscribe();
     }
-  }
-  
-listarEstoque() {
-  
   }
 
 }

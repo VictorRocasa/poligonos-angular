@@ -10,8 +10,7 @@ table, th, td {
   
   .item:hover{
     background-color: #acacac;
-    position: relative;
-    cursor: pointer;
+    position: text;
   }
   
   .item.ativo{

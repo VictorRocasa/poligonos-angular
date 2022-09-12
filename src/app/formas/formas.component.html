@@ -1,1 +1,15 @@
-<p>formas works!</p>
+<div>
+    <h2>Formas cadastradas</h2>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>Poligonos(Id)</td>
+        <td>Formas(Id)</td>
+      </tr>
+      <tr class = "item" *ngFor="let forma of formas">
+        <td>{{ forma.id }}</td>
+        <td>{{ imprimeArrayNumerica(forma.idsPoligonos) }}</td>
+        <td>{{ imprimeArrayNumerica(forma.idsFormas) }}</td>
+      </tr>
+    </table>
+  </div>

@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import { Forma } from './formas';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FormaService {
+
+  private url = 'http://localhost:8080/api/formas/CRUD/';  // URL to web api
+
+  constructor(private http: HttpClient) { }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  //HTTP getPoligonos
+  getFormas() : Observable<Forma[]>{
+    return this.http.get<Forma[]>(this.url)
+      .pipe(catchError(this.handleError<Forma[]>('getPoligonos', [])
+      ));
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+}
