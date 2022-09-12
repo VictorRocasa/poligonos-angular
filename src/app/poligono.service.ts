@@ -43,8 +43,8 @@ export class PoligonoService {
   }
 
   //HTTP put
-  atualizarPoligono(poligono: Poligono): Observable<any> {
-    return this.http.put(this.url+'/editar/'+poligono.id, poligono, this.httpOptions).pipe(catchError(this.handleError<any>('updatePoligono')));
+  atualizarPoligono(param:string): Observable<any> {
+    return this.http.put(this.url+'editar'+param, this.httpOptions).pipe(catchError(this.handleError<any>('updatePoligono')));
   }
 
   //HTTP getEstoque

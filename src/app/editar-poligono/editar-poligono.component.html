@@ -1,11 +1,11 @@
 <div>
     <div>
         <label for="id">Id:</label><br>
-        <input type="text" id="id" #id placeholder="{{this.id}}"/>
+        <input type="text" id="id" #id disabled placeholder="{{this.poligono.id}}"/>
     </div>
     <div>
           <label for="qtdLados">Quantidade de lados:</label>
-          <select id="qtdLados" #lados name="qtdLados" [(ngModel)]="this.lados">
+          <select id="qtdLados" #lados name="qtdLados" [(ngModel)]="this.poligono.lados">
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label for="tamanho">Tamanho:</label><br>
-        <input type="text" id="tamanho" #tamanho placeholder="{{this.tamanho}}"/>
+        <input type="text" id="tamanho" #tamanho placeholder="{{this.poligono.tamanho}}"/>
     </div>
     <div>
         <label for="criado">Criado em:</label><br>
@@ -25,6 +25,6 @@
         <label for="editado">Última modificação:</label><br>
         <input type="text" id="editado" #editado disabled placeholder="{{this.data2}}"/>
     </div>
-    <button type="button" (click)="salvar();">Salvar</button>
+    <button type="button" (click)="salvar(lados.value, tamanho.value);">Salvar</button>
     <app-botao-voltar></app-botao-voltar>
 </div>
