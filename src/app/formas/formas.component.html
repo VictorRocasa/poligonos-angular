@@ -4,12 +4,16 @@
       <tr>
         <td>Id</td>
         <td>Poligonos(Id)</td>
+        <td>Resumo do Poligono</td>
         <td>Formas(Id)</td>
+        <td>Resumo da forma 0</td>
       </tr>
       <tr class = "item" *ngFor="let forma of formas">
         <td>{{ forma.id }}</td>
-        <td>{{ imprimeArrayNumerica(forma.idsPoligonos) }}</td>
-        <td>{{ imprimeArrayNumerica(forma.idsFormas) }}</td>
+        <td>{{ forma.idsPoligonos[0] }}</td>
+        <td>{{ forma.resumoPoligonos[0] }}</td>
+        <td>{{ forma.idsFormas[0] }}</td>
+        <td>{{ forma.resumoFormas[0] }}</td>
       </tr>
     </table>
   </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Forma } from '../formas';
+import { FormaFormatador } from '../formaFormatador';
 
 import { FormaService } from '../forma.service';
 
@@ -13,7 +13,7 @@ export class FormasComponent implements OnInit {
 
   constructor(private formaService: FormaService) { }
 
-  formas: Forma[] = [];
+  formas: FormaFormatador[] = [];
 
   ngOnInit(): void {
     this.getFormas();
@@ -30,8 +30,8 @@ export class FormasComponent implements OnInit {
     for(let i = 1; i < arr.length; i++){
       retorno+=', '+arr[i];
     }
-    alert(retorno);
-    return retorno;
+    //return retorno;
+    return 'placeholder';
   }
 
 }
