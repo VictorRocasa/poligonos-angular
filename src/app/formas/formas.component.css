@@ -25,6 +25,10 @@ table, th, td {
     width: 7em;
   }
   
+  .poligono{
+    width: 100%;
+  }
+  
   button {
     background-color: #eee;
     border: none;

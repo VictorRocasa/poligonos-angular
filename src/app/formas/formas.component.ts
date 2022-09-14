@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 import { FormaFormatador } from '../formaFormatador';
 
 import { FormaService } from '../forma.service';
+import { NgIfContext } from '@angular/common';
 
 @Component({
   selector: 'app-formas',
@@ -10,6 +11,7 @@ import { FormaService } from '../forma.service';
   styleUrls: ['./formas.component.css']
 })
 export class FormasComponent implements OnInit {
+@ViewChild('elseBlock', {static: true}) elseBlock: TemplateRef<any>|null = null;
 
   constructor(private formaService: FormaService) { }
 
@@ -20,7 +22,7 @@ export class FormasComponent implements OnInit {
   }
   
   getFormas() {
-    this.formaService.getFormas().subscribe(formas => this.formas = formas)    
+    this.formaService.getFormas().subscribe(formas => this.formas = formas)   
   }
 
   imprimeArrayNumerica(arr: number[]): string{

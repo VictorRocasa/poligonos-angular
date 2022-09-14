@@ -10,7 +10,12 @@
       </tr>
       <tr class = "item" *ngFor="let forma of formas">
         <td>{{ forma.id }}</td>
-        <td>{{ forma.idsPoligonos[0] }}</td>
+        <td *ngIf="forma.resumoPoligonos.length > 0; else elseBlock">
+          <select class = "poligono" id="poligono" #poligono name="qtdLados">
+            <option value="3" *ngFor="let resumo of forma.resumoPoligonos">{{resumo}}</option>
+          </select>
+        </td>
+        <ng-template #elseBlock><td>Nenhum</td></ng-template>
         <td>{{ forma.resumoPoligonos[0] }}</td>
         <td>{{ forma.idsFormas[0] }}</td>
         <td>{{ forma.resumoFormas[0] }}</td>
