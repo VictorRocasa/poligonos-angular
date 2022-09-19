@@ -59,7 +59,7 @@ export class FormasComponent implements OnInit {
         console.log(res); // SE DER 200 OK
         this.formas = this.formas.filter(h => h != forma);
       }, error => {
-      console.error(error); // SE DER QUALQUER ERRO
+        console.error(error); // SE DER QUALQUER ERRO
         alert('Não é possível apagar a forma pois ele compoe outra forma!');
       });
     }

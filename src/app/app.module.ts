@@ -13,6 +13,7 @@ import { BotaoVoltarComponent } from './botao-voltar/botao-voltar.component';
 import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.component';
 import { FormasComponent } from './formas/formas.component';
 import { EstoqueComponent } from './estoque/estoque.component';
+import { DetalhesFormaComponent } from './detalhes-forma/detalhes-forma.component';
 
 
 
@@ -24,7 +25,8 @@ import { EstoqueComponent } from './estoque/estoque.component';
     BotaoVoltarComponent,
     EditarPoligonoComponent,
     FormasComponent,
-    EstoqueComponent
+    EstoqueComponent,
+    DetalhesFormaComponent
   ],
   imports: [
     HttpClientModule,

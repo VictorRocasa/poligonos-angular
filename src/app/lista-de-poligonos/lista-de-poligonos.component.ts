@@ -48,8 +48,8 @@ export class ListaDePoligonosComponent implements OnInit {
         console.log(res); // SE DER 200 OK
         this.poligonos = this.poligonos.filter(h => h != poligono);
       }, error => {
-      console.error(error); // SE DER QUALQUER ERRO
-      alert('Não é possível apagar o poligono pois ele compoe uma forma!');
+        console.error(error); // SE DER QUALQUER ERRO
+        alert('Não é possível apagar o poligono pois ele compoe uma forma!');
       });
     }
   }
