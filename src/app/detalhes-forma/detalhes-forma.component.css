@@ -1,3 +1,19 @@
+.principal{
+    width: 50%;
+    display: flex;
+}
+
+.lista{
+    width: 33%;
+    float: left;
+}
+
+.botoes{
+    width: 34%;
+    float: left;
+}
+
+
 div{
     margin-top: 10px;
 }
