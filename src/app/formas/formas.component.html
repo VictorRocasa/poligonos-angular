@@ -1,24 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div>
     <h2>Formas cadastradas</h2>
     <table>
       <tr>
         <td>Id</td>
-        <td>Poligonos(Id)</td>
-        <td>Resumo do Poligono</td>
-        <td>Formas(Id)</td>
-        <td>Resumo da forma 0</td>
+        <td>Poligonos</td>
+        <td>Formas</td>
+        <td>Editar</td>
+        <td>Excluir</td>
       </tr>
-      <tr class = "item" *ngFor="let forma of formas">
+      <tr *ngFor="let forma of formas">
         <td>{{ forma.id }}</td>
-        <td *ngIf="forma.resumoPoligonos.length > 0; else elseBlock">
-          <select class = "poligono" id="poligono" #poligono name="qtdLados">
-            <option value="3" *ngFor="let resumo of forma.resumoPoligonos">{{resumo}}</option>
+        <td *ngIf="forma.poligonos.length > 0; else elseBlock">
+          <select id="poligono" name="poligono" #p>
+            <option *ngFor="let poligono of forma.poligonos" value="poligono.id" >{{ getResumoPoligono(poligono) }}</option>
           </select>
         </td>
         <ng-template #elseBlock><td>Nenhum</td></ng-template>
-        <td>{{ forma.resumoPoligonos[0] }}</td>
-        <td>{{ forma.idsFormas[0] }}</td>
-        <td>{{ forma.resumoFormas[0] }}</td>
+        <td *ngIf="forma.formas.length > 0; else elseBlock2">
+          <select id="agrupamento" name="agrupamento" #a>
+            <option *ngFor="let agrupamento of forma.formas" value="agrupamento.id" >{{ getResumoForma(agrupamento.id) }}</option>
+          </select>
+        </td>
+        <ng-template #elseBlock2><td>Nenhum</td></ng-template>
+        <td class = "editar"><i class="fa fa-pencil" style="font-size:26px"></i></td>
+        <td class = "excluir" (click)="apagar(forma);">X</td>
       </tr>
     </table>
   </div>

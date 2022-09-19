@@ -1,7 +1,8 @@
+import { Forma } from "./forma";
+import { Poligono } from "./poligono";
+
 export interface FormaFormatador {
     id: number;
-    idsPoligonos: number[];
-    resumoPoligonos: string[];
-    idsFormas: number[];
-    resumoFormas: string[];
+    poligonos: Poligono[];
+    formas: Forma[];
   }

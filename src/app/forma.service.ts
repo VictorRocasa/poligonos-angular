@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { FormaFormatador } from './formaFormatador';
+import { FormaFormatador } from './FormaFormatador';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,15 @@ export class FormaService {
   //HTTP getPoligonos
   getFormas() : Observable<FormaFormatador[]>{
     return this.http.get<FormaFormatador[]>(this.url)
-      .pipe(catchError(this.handleError<FormaFormatador[]>('getPoligonos', [])
+      .pipe(catchError(this.handleError<FormaFormatador[]>('getFormas', [])
       ));
+  }
+
+  //HTTP delete
+  deletarForma(idForma:number): Observable<FormaFormatador> {
+    const url = `${this.url}apagar/${idForma}`;
+  
+    return this.http.delete<FormaFormatador>(url, this.httpOptions);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

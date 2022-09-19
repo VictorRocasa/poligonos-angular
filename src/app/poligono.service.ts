@@ -15,6 +15,8 @@ import { ContadorPoligono } from './contadorPoligono';
 })
 export class PoligonoService {
 
+  public sucessoApagar: Boolean = true;
+  
   private url = 'http://localhost:8080/api/poligonos/CRUD/';  // URL to web api
 
   constructor(private http: HttpClient) { }
@@ -36,11 +38,14 @@ export class PoligonoService {
   }
 
   //HTTP delete
-  deletarPoligono(idPoligono:number): Observable<Poligono> {
+  deletarPoligono(idPoligono:number): Observable<Boolean> {
     const url = `${this.url}apagar/${idPoligono}`;
   
-    return this.http.delete<Poligono>(url, this.httpOptions).pipe(catchError(this.handleError<Poligono>('deletePoligono')));
+    return this.http.delete<Boolean>(url, this.httpOptions).pipe(catchError(this.handleError<Boolean>('deletePoligono')));
   }
+  resetarFlagApagar(){
+    this.sucessoApagar = true;
+}
 
   //HTTP put
   atualizarPoligono(param:string): Observable<any> {
@@ -56,6 +61,8 @@ export class PoligonoService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
+
+      this.sucessoApagar = false;
 
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead

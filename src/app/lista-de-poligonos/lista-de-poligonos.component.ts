@@ -21,7 +21,7 @@ export class ListaDePoligonosComponent implements OnInit {
   }
 
   getPoligonos(): void{
-    this.poligonoService.getPoligonos().subscribe(poligonos => this.poligonos = poligonos)
+    this.poligonoService.getPoligonos().subscribe(poligonos => this.poligonos = poligonos);
   }
 
   onSelect(poligono: Poligono): void {
@@ -44,8 +44,13 @@ export class ListaDePoligonosComponent implements OnInit {
 
   apagar(poligono: Poligono) : void{
     if(confirm('Deseja apagar permanentemente o poligono de Id = '+poligono.id+'?')){
-      this.poligonos = this.poligonos.filter(h => h != poligono);
-      this.poligonoService.deletarPoligono(poligono.id).subscribe();
+      this.poligonoService.deletarPoligono(poligono.id).subscribe(res => {
+        console.log(res); // SE DER 200 OK
+        this.poligonos = this.poligonos.filter(h => h != poligono);
+      }, error => {
+      console.error(error); // SE DER QUALQUER ERRO
+      alert('Não é possível apagar o poligono pois ele compoe uma forma!');
+      });
     }
   }
 
