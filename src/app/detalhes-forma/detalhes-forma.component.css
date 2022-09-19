@@ -4,15 +4,13 @@
 }
 
 .lista{
-    width: 33%;
     float: left;
+    margin-right: 50rem;
 }
 
 .botoes{
-    width: 34%;
     float: left;
 }
-
 
 div{
     margin-top: 10px;
@@ -21,3 +19,52 @@ div{
 label{
     margin-right: 8px;
 }
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  table{
+    float: left;
+  }
+  
+  .heroes li:hover {
+    left: .1em;
+  }
+  
+  .item:hover{
+    background-color: #acacac;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .item.ativo{
+    background-color: #8eacc9;
+  }
+  
+  .excluir:hover{
+    background-color: #de6c6c;
+  }
+  
+  .data{
+    width: 7em;
+  }
+  
+  button {
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+    margin-bottom: 1.3rem;
+    width: 25%;
+  }
+  
+  .divTabela{
+    width: 50%;
+  }
