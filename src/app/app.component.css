@@ -40,6 +40,10 @@ h2 {
     margin-top: -0.5rem;
   }
 
+  .navbar{
+    float: inline-start;
+  }
+
   .nav-botao{
     background-color: rgb(96, 133, 132);
     border: none;

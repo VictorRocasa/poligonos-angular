@@ -18,10 +18,12 @@ table, th, td {
   
   .editar:hover{
     background-color: #6cde9a;
+    cursor: pointer;
   }
   
   .excluir:hover{
     background-color: #de6c6c;
+    cursor: pointer;
   }
   
   .data{

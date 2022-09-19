@@ -1,24 +1,26 @@
-<div>
+<div class="divTabela">
   <h2>Lista de Polígonos</h2>
-  <button type = "button" routerLink="/poligonos/novo">Adicionar Poligono</button>
-  <button type = "button" (click)="editar();">Editar Poligono</button>
-  <button type = "button" routerLink="/poligonos/estoque">Listar Estoque</button>
-  <table>
-    <tr>
-      <td>Id</td>
-      <td>nº Lados</td>
-      <td>Tamanho</td>
-      <td class = "data">Criado em</td>
-      <td class = "data">Modificado em</td>
-      <td>Excluir</td>
-    </tr>
-    <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">
-      <td>{{ poligono.id }}</td>
-      <td>{{ poligono.lados }}</td>
-      <td>{{ poligono.tamanho }}</td>
-      <td>{{ poligono.dataCriacao }}</td>
-      <td>{{ poligono.ultimaModificacao }}</td>
-      <td class = "excluir" (click)="apagar(poligono);">X</td>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>nº Lados</td>
+        <td>Tamanho</td>
+        <td class = "data">Criado em</td>
+        <td class = "data">Modificado em</td>
+        <td>Excluir</td>
+      </tr>
+      <tr class = "item" [class.ativo]="poligono === selectedPoligono" *ngFor="let poligono of poligonos" (click)="onSelect(poligono);">
+        <td>{{ poligono.id }}</td>
+        <td>{{ poligono.lados }}</td>
+        <td>{{ poligono.tamanho }}</td>
+        <td>{{ poligono.dataCriacao }}</td>
+        <td>{{ poligono.ultimaModificacao }}</td>
+        <td class = "excluir" (click)="apagar(poligono);">X</td>
+      </tr>
+    </table>
+    <button type = "button" routerLink="/poligonos/novo">Adicionar Poligono</button>
+    <br>
+    <button type = "button" (click)="editar();">Editar Poligono</button>
+    <br>
+    <button type = "button" routerLink="/poligonos/estoque">Listar Estoque</button>
 </div>

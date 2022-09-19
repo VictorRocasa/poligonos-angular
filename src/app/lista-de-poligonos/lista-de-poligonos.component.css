@@ -4,6 +4,10 @@ table, th, td {
   font-size: 1.2rem;
 }
 
+table{
+  float: left;
+}
+
 .heroes li:hover {
   left: .1em;
 }
@@ -33,7 +37,12 @@ button {
   cursor: pointer;
   color: black;
   font-size: 20px;
-  margin-right: 12px;
-  margin-bottom: 1rem;
-  margin-top: -0.5rem;
+  margin-left: 0.5rem;
+  margin-top: -0.02rem;
+  margin-bottom: 1.3rem;
+  width: 25%;
+}
+
+.divTabela{
+  width: 50%;
 }
