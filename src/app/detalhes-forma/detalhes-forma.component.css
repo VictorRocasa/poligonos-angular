@@ -3,13 +3,12 @@
     display: flex;
 }
 
-.lista{
-    float: left;
-    margin-right: 50rem;
+.lista{  
+    margin-right: 1em;
 }
 
 .botoes{
-    float: left;
+  margin-top: 3em;
 }
 
 div{

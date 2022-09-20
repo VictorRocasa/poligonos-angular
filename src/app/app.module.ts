@@ -14,6 +14,7 @@ import { EditarPoligonoComponent } from './editar-poligono/editar-poligono.compo
 import { FormasComponent } from './formas/formas.component';
 import { EstoqueComponent } from './estoque/estoque.component';
 import { DetalhesFormaComponent } from './detalhes-forma/detalhes-forma.component';
+import { BotaoVoltarGrandeComponent } from './botao-voltar-grande/botao-voltar-grande.component';
 
 
 
@@ -26,7 +27,8 @@ import { DetalhesFormaComponent } from './detalhes-forma/detalhes-forma.componen
     EditarPoligonoComponent,
     FormasComponent,
     EstoqueComponent,
-    DetalhesFormaComponent
+    DetalhesFormaComponent,
+    BotaoVoltarGrandeComponent
   ],
   imports: [
     HttpClientModule,
