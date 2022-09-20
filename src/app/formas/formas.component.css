@@ -36,12 +36,10 @@ table, th, td {
   
   button {
     background-color: #eee;
-    border: none;
-    border-radius: 4px;
+    border: 1px solid;
     cursor: pointer;
     color: black;
     font-size: 20px;
-    margin-right: 12px;
-    margin-bottom: 1rem;
-    margin-top: -0.5rem;
+    width:593.5px;
+    margin-top: 8px;
   }
