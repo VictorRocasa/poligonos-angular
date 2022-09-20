@@ -5,6 +5,8 @@ import { FormaService } from '../forma.service';
 import { FormaFormatador } from '../FormaFormatador';
 import { Poligono } from '../poligono';
 
+import {Router} from '@angular/router'; 
+
 @Component({
   selector: 'app-formas',
   templateUrl: './formas.component.html',
@@ -14,7 +16,7 @@ export class FormasComponent implements OnInit {
 @ViewChild('elseBlock', {static: true}) elseBlock: TemplateRef<any>|null = null;
 @ViewChild('elseBlock2', {static: true}) elseBlock2: TemplateRef<any>|null = null;
 
-  constructor(private formaService: FormaService) { }
+  constructor(private formaService: FormaService, private router:Router) { }
 
   formas: FormaFormatador[] = [];
 
@@ -30,27 +32,8 @@ export class FormasComponent implements OnInit {
     return poligono.lados+' lados de tamanho '+poligono.tamanho;
   }
 
-  getResumoForma(agrupamento: number): string{
-    let conta: number = 0;
-    let resultado: string = "";
-    for(let forma of this.formas)
-      if(forma.id === agrupamento){
-        if(forma.poligonos.length === 0)
-          resultado+="0 poligonos ";
-        else if(forma.poligonos.length === 1)
-          resultado+="1 poligono ";
-        else if(forma.poligonos.length > 1)
-          resultado+=forma.poligonos.length+" poligonos ";
-        resultado+="e ";
-        if(forma.formas.length === 0)
-          resultado+="0 formas";
-        else if(forma.formas.length === 1)
-          resultado+="1 forma";
-        else if(forma.formas.length > 1)
-          resultado+=forma.formas.length+" formas ";
-          break;
-      } 
-      return resultado;
+    detalhes(id:number) : void{
+        this.router.navigate(['formas/detalhes'], { queryParams: {id: id}});
     }
 
   apagar(forma: FormaFormatador): void{
