@@ -19,11 +19,18 @@ export class FormaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  //HTTP getPoligonos
+  //HTTP getFormas
   getFormas() : Observable<FormaFormatador[]>{
     return this.http.get<FormaFormatador[]>(this.url)
       .pipe(catchError(this.handleError<FormaFormatador[]>('getFormas', [])
       ));
+  }
+
+  //HTTP getForma
+  getForma(idForma: number) : Observable<FormaFormatador>{
+    const url = this.url+idForma;
+    return this.http.get<FormaFormatador>(url)
+      .pipe(catchError(this.handleError<FormaFormatador>(`getForma id=${idForma}`)));
   }
 
   //HTTP delete
