@@ -16,7 +16,7 @@
                 <td>{{ poligono.tamanho }}</td>
                 <td>{{ poligono.dataCriacao }}</td>
                 <td>{{ poligono.ultimaModificacao }}</td>
-            <td><input type = "checkbox" value=""></td>
+            <td><input class = "selecionar" type = "checkbox" value=""></td>
         </table>
     </div>
     <div class="lista" *ngIf="forma.formas.length > 0">
@@ -30,7 +30,7 @@
             <tr class = "item" *ngFor="let f of forma.formas; let i = index">
                 <td>{{ f.id }}</td>
                 <td>{{ forma.resumoFormas[i] }}</td>
-                <td><input type = "checkbox" value=""></td>
+                <td><input class = "selecionar" type = "checkbox" value=""></td>
             </tr>
         </table>
     </div>

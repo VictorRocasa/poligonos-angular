@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { FormaFormatador } from './FormaFormatador';
+import { FormaFormatador } from './formaFormatador';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,13 @@ export class FormaService {
     const url = this.url+idForma;
     return this.http.get<FormaFormatador>(url)
       .pipe(catchError(this.handleError<FormaFormatador>(`getForma id=${idForma}`)));
+  }
+
+  //HTTP getFormas que não estejam sendo usadas por outras
+  listarEstoque() : Observable<FormaFormatador[]>{
+    return this.http.get<FormaFormatador[]>(this.url+'agrupamento')
+      .pipe(catchError(this.handleError<FormaFormatador[]>('getFormas', [])
+      ));
   }
 
   //HTTP delete

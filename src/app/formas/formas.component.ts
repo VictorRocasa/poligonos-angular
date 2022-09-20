@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 
 import { FormaService } from '../forma.service';
-import { FormaFormatador } from '../FormaFormatador';
+import { FormaFormatador } from '../formaFormatador';
 import { Poligono } from '../poligono';
 
 import {Router} from '@angular/router'; 

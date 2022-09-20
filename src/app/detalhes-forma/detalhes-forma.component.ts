@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormaService } from '../forma.service';
-import { FormaFormatador } from '../FormaFormatador';
+import { FormaFormatador } from '../formaFormatador';
 
 @Component({
   selector: 'app-detalhes-forma',
